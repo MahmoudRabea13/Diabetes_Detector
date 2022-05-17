@@ -22,7 +22,7 @@ def welcome():
     return render_template("welcome.html")
 @app.route("/login",methods=["POST","GET"])
 def login():
-    data_m = "hello"
+    data_m = ""
     if request.method == "POST":
         input_data=[]
         input_data.append(float(request.form["Pregnancies"]))
