@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from importlib.resources import contents
 from flask import Flask, render_template, template_rendered, request, redirect
 import pickle 
 import numpy as np
@@ -20,6 +22,7 @@ def welcome():
     return render_template("welcome.html")
 @app.route("/login",methods=["POST","GET"])
 def login():
+    data_m = "hello"
     if request.method == "POST":
         input_data=[]
         input_data.append(float(request.form["Pregnancies"]))
@@ -33,11 +36,9 @@ def login():
         last_data = preprocess(input_data)
         out = loadmodel(last_data)
         if  out[0] == 0:
-            content = "NOT Diabetes"
+            data_m = "NOT Diabetes"
         else:
-            content = "Diabetes"
-    else:
-        print("error but it work bro :)")
-    return render_template("login.html")
+            data_m = "Diabetes"
+    return render_template("login.html",content=data_m)
 if __name__ == "__main__":
     app.run(debug=True)
