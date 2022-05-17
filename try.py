@@ -12,8 +12,6 @@ def preprocess(input_data):
 
     # reshape the array as we are predicting for one instance
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-    # standardize the input data
-    #std_data = scaler.transform(input_data_reshaped)
     return input_data_reshaped
 def loadmodel(input):
     return model.predict(input)
@@ -35,9 +33,9 @@ def login():
         last_data = preprocess(input_data)
         out = loadmodel(last_data)
         if  out[0] == 0:
-            return f"<h1>NOT Diabetic</h1>"
+            content = "NOT Diabetes"
         else:
-            return f"<h1>Diabetic</h1>"
+            content = "Diabetes"
     else:
         print("error but it work bro :)")
     return render_template("login.html")
