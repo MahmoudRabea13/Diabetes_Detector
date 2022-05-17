@@ -1,11 +1,38 @@
-<form action="#" method="post">
-    <p><input type="text" name="Pregnancies"/></p>
-    <p><input type="text" name="Glucose"/></p>
-    <p><input type="text" name="BloodPressure"/></p>
-    <p><input type="text" name="SkinThickness"/></p>
-    <p><input type="text" name="Insulin"/></p>
-    <p><input type="text" name="BMI"/></p>
-    <p><input type="text" name="DiabetesPedigreeFunction"/></p>
-    <p><input type="text" name="Age"/></p>
-    <p><input type="submit" value="sbm"></p>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Detector</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/Normalize.css') }}">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <form action="login" method="post" id="detect-form">
+        <p><input type="number" min="0" max="20" placeholder="No of Pregnancies" required name="Pregnancies"/></p>
+        <p><input type="number" min="0" max="200" placeholder="Glucose" required name="Glucose"/></p>
+        <p><input type="number" min="0" max="150" placeholder="Blood Pressure" required name="BloodPressure"/></p>
+        <p><input type="number" min="0" max="100" placeholder="Skin Thickness" required name="SkinThickness"/></p>
+        <p><input type="number" min="0" max="1000" placeholder="Insulin" required name="Insulin"/></p>
+        <p><input type="number" min="0" max="80" placeholder="BMI" required step="0.001" name="BMI"/></p>
+        <p><input type="number" min="0" max="5" placeholder="Diabetes Pedigree Function" required step="0.001" name="DiabetesPedigreeFunction"/></p>
+        <p><input type="number" min="0" max="100" placeholder="Age" required name="Age"/></p>
+        <p><input type="submit" value="Predict" class="button detect-btn"></p>
+    </form>
+    <div class="result">
+        <div class="result-card">
+            <h1>Prediction Result is</h1>
+            <p></p>
+        </div>
+    </div>
+</body>
+<script src="../JS/main.js"></script>
+</html>
