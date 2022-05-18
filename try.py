@@ -36,9 +36,9 @@ def login():
         last_data = preprocess(input_data)
         out = loadmodel(last_data)
         if  out[0] == 0:
-            data_m = "NOT Diabetes"
+            data_m = "NOT Diabetic"
         else:
-            data_m = "Diabetes"
+            data_m = "Diabetic"
     return render_template("login.html",content=data_m)
 if __name__ == "__main__":
     app.run(debug=True)

@@ -16,22 +16,27 @@
         rel="stylesheet">
 </head>
 <body>
-    <form action="login" method="post" id="detect-form">
-        <p><input type="number" min="0" max="20" placeholder="No of Pregnancies" required name="Pregnancies"/></p>
-        <p><input type="number" min="0" max="200" placeholder="Glucose" required name="Glucose"/></p>
-        <p><input type="number" min="0" max="150" placeholder="Blood Pressure" required name="BloodPressure"/></p>
-        <p><input type="number" min="0" max="100" placeholder="Skin Thickness" required name="SkinThickness"/></p>
-        <p><input type="number" min="0" max="1000" placeholder="Insulin" required name="Insulin"/></p>
-        <p><input type="number" min="0" max="80" placeholder="BMI" required step="0.001" name="BMI"/></p>
-        <p><input type="number" min="0" max="5" placeholder="Diabetes Pedigree Function" required step="0.001" name="DiabetesPedigreeFunction"/></p>
-        <p><input type="number" min="0" max="100" placeholder="Age" required name="Age"/></p>
-        <p><input type="submit" value="Predict" class="button detect-btn"></p>
-    </form>
-    <div class="result">
-        <div class="result-card">
-            <h1>Prediction Result is</h1>
-            <h2>{{content}}</h2>
-            <div class="button back-btn">Back</div>
+    <div class="container">
+        <div class="Goooo">
+            <div class="test">
+                <form action="login" method="post" id="detect-form">
+                    <p><input title="Enter No of Pregnancies" type="number" min="0" max="20" placeholder="No of Pregnancies" required name="Pregnancies"/></p>
+                    <p><input title="Enter Your Glucose" type="number" min="0" max="200" placeholder="Glucose" required name="Glucose"/></p>
+                    <p><input title="Enter Your Blood Pressure" type="number" min="0" max="150" placeholder="Blood Pressure" required name="BloodPressure"/></p>
+                    <p><input title="Enter Your Skin Thickness" type="number" min="0" max="100" placeholder="Skin Thickness" required name="SkinThickness"/></p>
+                    <p><input title="Enter Your Insulin" type="number" min="0" max="1000" placeholder="Insulin" required name="Insulin"/></p>
+                    <p><input title="Enter Your BMI" type="number" min="0" max="80" placeholder="BMI" required step="0.001" name="BMI"/></p>
+                    <p><input title="Enter Your Diabetes Pedigree Function" type="number" min="0" max="5" placeholder="Diabetes Pedigree Function" required step="0.001" name="DiabetesPedigreeFunction"/></p>
+                    <p><input title="Enter Your Age" type="number" min="0" max="100" placeholder="Age" required name="Age"/></p>
+                    <p><input type="submit" value="Predict" class="button detect-btn"></p>
+                </form>
+            </div>
+            <div class="result">
+                <div class="result-card">
+                    <h2>Prediction Result is</h2>
+                    <h1>{{content}}</h1>
+                </div>
+            </div>
         </div>
     </div>
 </body>

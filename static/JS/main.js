@@ -1,4 +1,5 @@
 let result = document.querySelector(".result")
+const form  = document.getElementById('detect-form');
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("start-btn")) {
         location.assign('/login')
@@ -7,10 +8,8 @@ document.addEventListener("click", function (e) {
         location.assign('/login')
     }
 })
-const form  = document.getElementById('detect-form');
 form.addEventListener('submit', (e) => {
     result.style.display = "block"
 });
-
 
 
