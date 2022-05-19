@@ -1,15 +1,17 @@
 let result = document.querySelector(".result")
 const form  = document.getElementById('detect-form');
+let resultText = document.querySelector(".result-card h1")
+
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("start-btn")) {
         location.assign('/login')
     }
-    if (e.target.classList.contains("back-btn")) {
-        location.assign('/login')
-    }
 })
-form.addEventListener('submit', (e) => {
-    result.style.display = "block"
-});
 
 
+
+const myTimeout = setTimeout(myGreeting, 10000);
+
+function myGreeting() {
+    resultText.innerHTML=""
+}
