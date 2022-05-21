@@ -1,10 +1,7 @@
-from asyncio.windows_events import NULL
 from importlib.resources import contents
 from flask import Flask, render_template, template_rendered, request, redirect
 import pickle 
 import numpy as np
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
 input_data = []
 model = pickle.load(open('final_model.sav','rb'))
 app = Flask(__name__)

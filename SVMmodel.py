@@ -25,7 +25,7 @@ for i in range(len(df['Insulin'])):
 X = df.drop(columns = 'Outcome', axis=1)
 Y = df['Outcome']
 #Split data to train set and test set
-X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2)
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, stratify=Y, random_state=2)
 
 
 classifier = svm.SVC(kernel='linear')
@@ -60,7 +60,7 @@ input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 prediction = classifier.predict(input_data_reshaped)
 print(prediction)
 #Saving the model to sav file
-#pickle.dump(classifier,open('final_model.sav','wb'))
+pickle.dump(classifier,open('final_model.sav','wb'))
 if (prediction[0] == 0):
   print('The person is not diabetic')
 else:
