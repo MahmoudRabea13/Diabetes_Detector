@@ -4,11 +4,9 @@ let resultText = document.querySelector(".result-card h1")
 
 document.addEventListener("click", function (e) {
     if (e.target.classList.contains("start-btn")) {
-        location.assign('/login')
+        location.assign('/insert-data')
     }
 })
-
-
 
 const myTimeout = setTimeout(myGreeting, 10000);
 

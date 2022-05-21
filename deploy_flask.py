@@ -20,8 +20,8 @@ def loadmodel(input):
 @app.route("/",methods=["POST","GET"])
 def welcome():
     return render_template("welcome.html")
-@app.route("/login",methods=["POST","GET"])
-def login():
+@app.route("/insert-data",methods=["POST","GET"])
+def insertdata():
     data_m = ""
     if request.method == "POST":
         input_data=[]
@@ -39,6 +39,6 @@ def login():
             data_m = "NOT Diabetic"
         else:
             data_m = "Diabetic"
-    return render_template("login.html",content=data_m)
+    return render_template("insert-data.html",content=data_m)
 if __name__ == "__main__":
     app.run(debug=True)
