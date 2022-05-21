@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.metrics import accuracy_score
@@ -21,14 +20,14 @@ for i in range(len(df['Insulin'])):
     df['BloodPressure'][i] = df['BloodPressure'].mean()
   if df['SkinThickness'][i] < 3.3:
     df['SkinThickness'][i]=df['SkinThickness'].mean()
+
 #Set X as features of our model and Y as the prediction of the model
 X = df.drop(columns = 'Outcome', axis=1)
 Y = df['Outcome']
-#X_test = dg.drop(columns = 'Outcome', axis=1)
-#Y_test = dg['Outcome']
 #Split data to train set and test set
-X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, stratify=Y, random_state=2)
-#print(X.shape, X_train.shape, X_test.shape)
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2)
+
+
 classifier = svm.SVC(kernel='linear')
 
 #training the support vector Machine Classifier

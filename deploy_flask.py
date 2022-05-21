@@ -41,4 +41,4 @@ def insertdata():
             data_m = "Diabetic"
     return render_template("insert-data.html",content=data_m)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host="192.168.1.7",port=8080)
