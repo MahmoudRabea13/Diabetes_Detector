@@ -20,7 +20,6 @@ for i in range(len(df['Insulin'])):
     df['BloodPressure'][i] = df['BloodPressure'].mean()
   if df['SkinThickness'][i] < 3.3:
     df['SkinThickness'][i]=df['SkinThickness'].mean()
-
 #Set X as features of our model and Y as the prediction of the model
 X = df.drop(columns = 'Outcome', axis=1)
 Y = df['Outcome']
